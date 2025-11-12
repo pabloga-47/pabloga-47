@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Hogar Ideal Inmobiliaria</title>
+<title>NovaHabitat Inmobiliaria</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
@@ -9,8 +9,8 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.9;cursor:pointer}
-.w3-half img:hover{opacity:1}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.9;cursor:pointer;transition:0.3s;}
+.w3-half img:hover{opacity:1;transform:scale(1.02);}
 </style>
 </head>
 <body>
@@ -19,14 +19,15 @@ body {font-size:16px;}
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Cerrar menú</a>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Hogar<br>Ideal</b></h3>
+    <h3 class="w3-padding-64"><b>Nova<br>Habitat</b></h3>
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a> 
     <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Propiedades</a> 
     <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servicios</a> 
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipo</a> 
-    <a href="#plans" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Planes</a> 
+    <a href="#reviews" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Opiniones</a> 
+    <a href="#blog" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Blog</a>
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
   </div>
 </nav>
@@ -34,10 +35,9 @@ body {font-size:16px;}
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-  <span>Hogar Ideal</span>
+  <span>NovaHabitat</span>
 </header>
 
-<!-- Overlay -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="cerrar menú" id="myOverlay"></div>
 
 <!-- PAGE CONTENT -->
@@ -45,7 +45,7 @@ body {font-size:16px;}
 
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Encuentra tu hogar ideal</b></h1>
+    <h1 class="w3-jumbo"><b>Tu próximo hogar te espera</b></h1>
     <h1 class="w3-xxxlarge w3-text-red"><b>Propiedades destacadas</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
@@ -53,22 +53,20 @@ body {font-size:16px;}
   <!-- Photo grid -->
   <div class="w3-row-padding">
     <div class="w3-half">
-      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" style="width:100%" onclick="onClick(this)" alt="Moderno departamento en el centro">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" style="width:100%" onclick="onClick(this)" alt="Casa familiar con jardín">
-      <img src="https://images.unsplash.com/photo-1560184897-60dfaa65c4f9" style="width:100%" onclick="onClick(this)" alt="Apartamento con vista al mar">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" style="width:100%" onclick="onClick(this)" alt="Casa familiar en el bosque">
+      <img src="https://images.unsplash.com/photo-1560184897-60dfaa65c4f9" style="width:100%" onclick="onClick(this)" alt="Apartamento con vista panorámica">
     </div>
 
     <div class="w3-half">
-      <img src="https://images.unsplash.com/photo-1600585154206-4e5fe7c39123" style="width:100%" onclick="onClick(this)" alt="Chalet moderno en zona exclusiva">
-      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" style="width:100%" onclick="onClick(this)" alt="Casa rústica en el campo">
-      <img src="https://images.unsplash.com/photo-1600607688960-6a3d1b3b8e3d" style="width:100%" onclick="onClick(this)" alt="Penthouse de lujo con terraza">
+      <img src="https://images.unsplash.com/photo-1600585154206-4e5fe7c39123" style="width:100%" onclick="onClick(this)" alt="Chalet moderno con piscina">
+      <img src="https://images.unsplash.com/photo-1600607688960-6a3d1b3b8e3d" style="width:100%" onclick="onClick(this)" alt="Penthouse de lujo en la ciudad">
     </div>
   </div>
 
-  <!-- Modal for full size images -->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+  <!-- Modal -->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
     <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-padding-64">
       <img id="img01" class="w3-image">
       <p id="caption"></p>
     </div>
@@ -78,99 +76,88 @@ body {font-size:16px;}
   <div class="w3-container" id="services" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Servicios</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>En <b>Hogar Ideal</b> te acompañamos en cada paso del proceso de compra, venta o alquiler de propiedades. Nuestra meta es hacer que encontrar tu hogar o inversión sea fácil, transparente y seguro.</p>
-    <p>Ofrecemos servicios de asesoramiento inmobiliario, gestión de propiedades, tasaciones, fotografía profesional y marketing inmobiliario personalizado para cada cliente.</p>
+    <p>En <b>NovaHabitat</b> combinamos tecnología, experiencia y atención personalizada para ofrecerte los mejores resultados en el mundo inmobiliario.</p>
+    <ul>
+      <li>Compra y venta de propiedades residenciales y comerciales</li>
+      <li>Gestión de alquileres y administración de inmuebles</li>
+      <li>Asesoramiento legal, financiero y fiscal</li>
+      <li>Fotografía, video y tours virtuales 360°</li>
+      <li>Promoción digital en más de 10 portales inmobiliarios</li>
+    </ul>
   </div>
   
   <!-- Equipo -->
   <div class="w3-container" id="team" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Nuestro equipo</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Conoce a nuestro equipo</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Un equipo de profesionales dedicados a ayudarte a cumplir tus sueños inmobiliarios.</p>
+    <p>Un grupo de expertos apasionados por conectar personas con su hogar ideal.</p>
   </div>
 
-  <!-- The Team -->
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328eaa46" alt="Laura Pérez" style="width:100%">
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328eaa46" style="width:100%">
         <div class="w3-container">
-          <h3>Laura Pérez</h3>
+          <h3>Andrea Salvatierra</h3>
           <p class="w3-opacity">Directora General</p>
-          <p>Especialista en bienes raíces con más de 15 años de experiencia en el mercado nacional e internacional.</p>
+          <p>Más de 20 años liderando proyectos inmobiliarios en España y Latinoamérica.</p>
         </div>
       </div>
     </div>
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" alt="Carlos Ruiz" style="width:100%">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6" style="width:100%">
         <div class="w3-container">
-          <h3>Carlos Ruiz</h3>
-          <p class="w3-opacity">Agente Inmobiliario</p>
-          <p>Apasionado por conectar personas con su hogar ideal. Su empatía y conocimiento del mercado lo hacen único.</p>
+          <h3>Pedro Mena</h3>
+          <p class="w3-opacity">Agente Senior</p>
+          <p>Experto en propiedades residenciales y de lujo. Atención personalizada garantizada.</p>
         </div>
       </div>
     </div>
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="María Gómez" style="width:100%">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" style="width:100%">
         <div class="w3-container">
-          <h3>María Gómez</h3>
+          <h3>Lucía Ortega</h3>
           <p class="w3-opacity">Asesora de Ventas</p>
-          <p>Brinda asesoramiento personalizado y estrategias efectivas para vender o alquilar tu propiedad rápidamente.</p>
+          <p>Apasionada por encontrar soluciones rápidas y efectivas para cada cliente.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Planes -->
-  <div class="w3-container" id="plans" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Planes</b></h1>
+  <!-- Opiniones -->
+  <div class="w3-container" id="reviews" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Opiniones de clientes</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Selecciona el plan que mejor se adapte a tus necesidades.</p>
+    <blockquote>“Gracias a NovaHabitat encontré mi casa soñada en menos de un mes. Servicio excelente y trato humano.” — <b>María López</b></blockquote>
+    <blockquote>“Vendí mi propiedad en tiempo récord. Su equipo es muy profesional y transparente.” — <b>Carlos Díaz</b></blockquote>
+    <blockquote>“Un servicio impecable. Desde el primer contacto hasta la entrega de llaves, todo fue perfecto.” — <b>Laura Gómez</b></blockquote>
   </div>
 
-  <div class="w3-row-padding">
-    <div class="w3-half w3-margin-bottom">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-dark-grey w3-xlarge w3-padding-32">Básico</li>
-        <li class="w3-padding-16">Publicación en portal web</li>
-        <li class="w3-padding-16">Fotografía profesional</li>
-        <li class="w3-padding-16">Atención personalizada</li>
-        <li class="w3-padding-16">Duración: 30 días</li>
-        <li class="w3-padding-16">
-          <h2>$99</h2>
-          <span class="w3-opacity">por propiedad</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-white w3-padding-large w3-hover-black">Contratar</button>
-        </li>
-      </ul>
-    </div>
-        
-    <div class="w3-half">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-red w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16">Publicación destacada</li>
-        <li class="w3-padding-16">Tour virtual y video 4K</li>
-        <li class="w3-padding-16">Asesoría legal y financiera</li>
-        <li class="w3-padding-16">Duración: 90 días</li>
-        <li class="w3-padding-16">
-          <h2>$199</h2>
-          <span class="w3-opacity">por propiedad</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-red w3-padding-large w3-hover-black">Contratar</button>
-        </li>
-      </ul>
-    </div>
+  <!-- Blog -->
+  <div class="w3-container" id="blog" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Blog inmobiliario</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Consejos, tendencias y noticias del mundo inmobiliario.</p>
+    <ul>
+      <li><b>5 claves para invertir en propiedades en 2025</b></li>
+      <li><b>Cómo preparar tu vivienda para la venta</b></li>
+      <li><b>Las zonas con mayor crecimiento inmobiliario</b></li>
+    </ul>
   </div>
-  
+
   <!-- Contacto -->
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Contacto</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>¿Quieres comprar, vender o alquilar una propiedad? Completa el formulario y un asesor se comunicará contigo.</p>
+    <p>¿Tienes dudas o buscas tu próxima inversión? Llámanos o escríbenos.</p>
+
+    <p><b>Teléfono:</b> +34 910 456 789</p>
+    <p><b>Email:</b> contacto@novahabitat.es</p>
+    <p><b>Dirección:</b> Av. de la Castellana 123, Madrid, España</p>
+    <p><b>Horario:</b> Lunes a Viernes 9:00 - 19:00</p>
+
     <form action="/action_page.php" target="_blank">
       <div class="w3-section">
         <label>Nombre</label>
@@ -182,7 +169,7 @@ body {font-size:16px;}
       </div>
       <div class="w3-section">
         <label>Mensaje</label>
-        <input class="w3-input w3-border" type="text" name="Mensaje" required>
+        <textarea class="w3-input w3-border" name="Mensaje" rows="4" required></textarea>
       </div>
       <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Enviar mensaje</button>
     </form>  
@@ -191,8 +178,16 @@ body {font-size:16px;}
 </div>
 
 <!-- Footer -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
-  <p class="w3-right">© 2025 Hogar Ideal | Desarrollado con <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-opacity">W3.CSS</a></p>
+<div class="w3-dark-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+  <div class="w3-left">
+    <p><b>NovaHabitat Inmobiliaria © 2025</b></p>
+    <p>Todos los derechos reservados | Política de privacidad | Términos y condiciones</p>
+  </div>
+  <div class="w3-right">
+    <a href="#" class="w3-hover-opacity">Facebook</a> |
+    <a href="#" class="w3-hover-opacity">Instagram</a> |
+    <a href="#" class="w3-hover-opacity">LinkedIn</a>
+  </div>
 </div>
 
 <script>
@@ -207,8 +202,7 @@ function w3_close() {
 function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
+  document.getElementById("caption").innerHTML = element.alt;
 }
 </script>
 
