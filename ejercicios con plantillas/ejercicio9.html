@@ -1,295 +1,169 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
+<title>Portfolio de Pablo</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio de Pablo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- W3CSS -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
-/* --------- ESTILOS GENERALES --------- */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: white;
-}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-sidebar {width: 120px;background: #222;}
+#main {margin-left: 120px}
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
 
-h1, h2, h3 {
-  letter-spacing: 1px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* --------- NAVBAR --------- */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.8);
-  padding: 15px 0;
-  z-index: 100;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #00eaff;
-}
-
-/* --------- INICIO / HERO --------- */
-#inicio {
-  height: 100vh;
-  background: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97") center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#inicio h1 {
-  font-size: 60px;
-}
-
-#inicio p {
-  font-size: 22px;
-}
-
-.boton {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #00eaff;
-  color: black;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.boton:hover {
-  background: white;
-}
-
-/* --------- SOBRE MÍ --------- */
-#sobremi {
-  padding: 70px 20px;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
-
-.foto {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-.skills {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.skill {
-  background: #222;
-  padding: 10px 20px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.skill:hover {
-  background: #00eaff;
-  color: black;
-}
-
-/* --------- PORTAFOLIO --------- */
-#portafolio {
-  padding: 70px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #1a1a1a;
-  padding-bottom: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-}
-
-.card h3 {
-  padding: 10px;
-}
-
-.card p {
-  padding: 0 10px;
-}
-
-.card .boton {
-  margin: 10px auto;
-  display: block;
-  width: 120px;
-  text-align: center;
-}
-
-/* --------- CONTACTO --------- */
-#contacto {
-  padding: 70px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-}
-
-form button {
-  padding: 12px 25px;
-  background: #00eaff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-form button:hover {
-  background: white;
-}
-
-/* --------- FOOTER --------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #000;
-  margin-top: 40px;
-}
+section {display: none;}
+.active {display: block;}
+.boton {padding:10px 20px;background:#fff;color:#000;border:none;}
+.boton:hover {background:#ccc;}
+.proyecto-img {width:100%;max-width:600px;border-radius:8px;margin-top:20px;}
 </style>
+
 </head>
+<body class="w3-black">
 
-<body>
-
-<!-- NAVBAR -->
-<nav>
-  <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#sobremi">Sobre mí</a></li>
-    <li><a href="#portafolio">Portafolio</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+<!-- SIDEBAR -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <img src="/w3images/avatar_smoke.jpg" style="width:100%">
+  <a onclick="mostrar('home')" class="w3-bar-item w3-button w3-black">
+    <i class="fa fa-home w3-xxlarge"></i><p>HOME</p>
+  </a>
+  <a onclick="mostrar('about')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i><p>ABOUT</p>
+  </a>
+  <a onclick="mostrar('photos')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i><p>PORTFOLIO</p>
+  </a>
+  <a onclick="mostrar('contact')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i><p>CONTACT</p>
+  </a>
 </nav>
 
-<!-- INICIO -->
-<section id="inicio">
-  <h1>Soy Pablo</h1>
-  <p>Estudiante de 15 años · 4º de la ESO</p>
-  <a class="boton" href="#portafolio">Ver Portafolio</a>
-</section>
-
-<!-- SOBRE MÍ -->
-<section id="sobremi">
-  <h2>Sobre mí</h2>
-  <img class="foto" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
-
-  <p>Hola, soy Pablo, tengo 15 años y estoy en 4º de la ESO.  
-  Me gusta la tecnología, el diseño y aprender cosas nuevas.  
-  Estoy empezando en el mundo del desarrollo web, creando mis primeros proyectos.</p>
-
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">Diseño</div>
-    <div class="skill">Creatividad</div>
+<!-- TOP NAV (MÓVIL) -->
+<div class="w3-top w3-hide-large w3-hide-medium">
+  <div class="w3-bar w3-black w3-opacity w3-center w3-small">
+    <a onclick="mostrar('home')" class="w3-bar-item w3-button">HOME</a>
+    <a onclick="mostrar('about')" class="w3-bar-item w3-button">ABOUT</a>
+    <a onclick="mostrar('photos')" class="w3-bar-item w3-button">PORTFOLIO</a>
+    <a onclick="mostrar('contact')" class="w3-bar-item w3-button">CONTACT</a>
   </div>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="w3-padding-large" id="main">
+
+<!-- HOME -->
+<section id="home" class="active w3-container w3-padding-32 w3-center w3-black">
+  <h1 class="w3-jumbo">Soy Pablo.</h1>
+  <p>Estudiante de 15 años · 4º de la ESO</p>
+  <img src="/w3images/man_smoke.jpg" class="w3-image" width="992">
 </section>
 
-<!-- PORTAFOLIO -->
-<section id="portafolio">
-  <h2>Mis Proyectos</h2>
+<!-- ABOUT -->
+<section id="about" class="w3-content w3-text-grey w3-padding-64">
+  <h2 class="w3-text-light-grey">Sobre mí</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <p>Hola, soy Pablo, tengo 15 años y estoy en 4º de la ESO. Me gusta el diseño, la tecnología y crear páginas web.</p>
 
-  <div class="grid">
-    
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581276879432-15a43b3f3c46" alt="Proyecto 1">
-      <h3>Proyecto 1</h3>
-      <p>Mi primera página web básica usando HTML.</p>
-      <a class="boton" href="#">Ver más</a>
+  <h3 class="w3-padding-16 w3-text-light-grey">Habilidades</h3>
+  <p class="w3-wide">HTML</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:80%"></div></div>
+
+  <p class="w3-wide">CSS</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:70%"></div></div>
+
+  <p class="w3-wide">Creatividad</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:90%"></div></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="photos" class="w3-padding-64 w3-content">
+  <h2 class="w3-text-light-grey">Mi Portafolio</h2>
+  <hr style="width:200px" class="w3-opacity">
+
+  <div class="w3-row-padding">
+    <!-- PROYECTO 1 -->
+    <div class="w3-half w3-margin-bottom">
+      <img src="https://images.unsplash.com/photo-1581276879432-15a43b3f3c46" style="width:100%">
+      <button class="boton w3-margin-top" onclick="mostrar('proyecto1')">Ver más</button>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Proyecto 2">
-      <h3>Proyecto 2</h3>
-      <p>Diseño de una landing page sencilla.</p>
-      <a class="boton" href="#">Ver más</a>
+    <!-- PROYECTO 2 -->
+    <div class="w3-half w3-margin-bottom">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" style="width:100%">
+      <button class="boton w3-margin-top" onclick="mostrar('proyecto2')">Ver más</button>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1547658718-1c6fa3b0183f" alt="Proyecto 3">
-      <h3>Proyecto 3</h3>
-      <p>Mini portafolio con estilos personalizados.</p>
-      <a class="boton" href="#">Ver más</a>
+    <!-- PROYECTO 3 -->
+    <div class="w3-half w3-margin-bottom">
+      <img src="https://images.unsplash.com/photo-1547658718-1c6fa3b0183f" style="width:100%">
+      <button class="boton w3-margin-top" onclick="mostrar('proyecto3')">Ver más</button>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Proyecto 4">
-      <h3>Proyecto 4</h3>
-      <p>Experimento con tarjetas y efectos hover.</p>
-      <a class="boton" href="#">Ver más</a>
+    <!-- PROYECTO 4 -->
+    <div class="w3-half w3-margin-bottom">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" style="width:100%">
+      <button class="boton w3-margin-top" onclick="mostrar('proyecto4')">Ver más</button>
     </div>
-
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>Envíame un mensaje si quieres saber más.</p>
+<section id="contact" class="w3-padding-64 w3-content w3-text-grey">
+  <h2 class="w3-text-light-grey">Contacto</h2>
+  <hr style="width:200px" class="w3-opacity">
 
-  <form>
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo" required>
-    <textarea placeholder="Mensaje" rows="5" required></textarea>
-    <button type="submit">Enviar</button>
+  <form class="w3-container">
+    <input class="w3-input w3-margin-bottom" placeholder="Nombre">
+    <input class="w3-input w3-margin-bottom" placeholder="Email">
+    <textarea class="w3-input w3-margin-bottom" placeholder="Mensaje"></textarea>
+    <button class="w3-button w3-light-grey">Enviar</button>
   </form>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  © 2025 Pablo – Todos los derechos reservados.
-</footer>
+<!-- PROYECTOS DETALLADOS (DENTRO DEL MISMO SCRIPT) -->
+
+<section id="proyecto1" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 1</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1581276879432-15a43b3f3c46">
+  <p>Mi primera página web usando HTML. Aprendí las bases de la estructura de una web.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section>
+
+<section id="proyecto2" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 2</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+  <p>Landing page con diseño limpio y bien organizado.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section>
+
+<section id="proyecto3" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 3</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1547658718-1c6fa3b0183f">
+  <p>Un mini portafolio donde experimenté con estilos personalizados.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section>
+
+<section id="proyecto4" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 4</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+  <p>Proyecto con tarjetas y efectos hover usando CSS.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section>
+
+</div>
+
+<script>
+function mostrar(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
