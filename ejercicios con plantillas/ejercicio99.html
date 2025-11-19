@@ -1,0 +1,113 @@
+<!DOCTYPE html><html>
+<head>
+<title>Portfolio de Pablo García Gebelli</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- W3CSS --><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-sidebar {width: 120px;background: #222;}
+#main {margin-left: 120px}
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+section {display: none;}
+.active {display: block;}
+.boton {padding:10px 20px;background:#fff;color:#000;border:none;}
+.boton:hover {background:#ccc;}
+.proyecto-img {width:100%;max-width:600px;border-radius:8px;margin-top:20px;}
+</style></head>
+<body class="w3-black"><!-- SIDEBAR --><nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" style="width:100%">
+  <a onclick="mostrar('home')" class="w3-bar-item w3-button w3-black">
+    <i class="fa fa-home w3-xxlarge"></i><p>HOME</p>
+  </a>
+  <a onclick="mostrar('about')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i><p>ABOUT</p>
+  </a>
+  <a onclick="mostrar('photos')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i><p>PORTFOLIO</p>
+  </a>
+  <a onclick="mostrar('contact')" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i><p>CONTACT</p>
+  </a>
+</nav><!-- TOP NAV (MÓVIL) --><div class="w3-top w3-hide-large w3-hide-medium">
+  <div class="w3-bar w3-black w3-opacity w3-center w3-small">
+    <a onclick="mostrar('home')" class="w3-bar-item w3-button">HOME</a>
+    <a onclick="mostrar('about')" class="w3-bar-item w3-button">ABOUT</a>
+    <a onclick="mostrar('photos')" class="w3-bar-item w3-button">PORTFOLIO</a>
+    <a onclick="mostrar('contact')" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div><!-- CONTENIDO PRINCIPAL --><div class="w3-padding-large" id="main"><!-- HOME --><section id="home" class="active w3-container w3-padding-32 w3-center w3-black">
+  <h1 class="w3-jumbo">Soy Pablo García Gebelli.</h1>
+  <p>Estudiante de 15 años · 4º de la ESO</p>
+  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" class="w3-image" width="992">
+</section><!-- ABOUT --><section id="about" class="w3-content w3-text-grey w3-padding-64">
+  <h2 class="w3-text-light-grey">Sobre mí</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <p>Hola, soy Pablo García Gebelli. Tengo 15 años y estoy en 4º de la ESO. Me gusta el diseño, la tecnología y crear páginas web. También juego baloncesto.</p>  <h3 class="w3-padding-16 w3-text-light-grey">Habilidades</h3>
+  <p class="w3-wide">HTML</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:80%"></div></div>  <p class="w3-wide">CSS</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:70%"></div></div>  <p class="w3-wide">Creatividad</p>
+  <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:90%"></div></div>
+</section><!-- PORTFOLIO --><section id="photos" class="w3-padding-64 w3-content">
+  <h2 class="w3-text-light-grey">Mi Portafolio</h2>
+  <hr style="width:200px" class="w3-opacity">  <div class="w3-row-padding">
+    <!-- PROYECTO 1 -->
+    <div class="w3-half w3-margin-bottom">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" style="width:100%">
+      <button class="boton w3-margin-top" onclick="mostrar('proyecto1')">Ver más</button>
+    </div><!-- PROYECTO 2 -->
+<div class="w3-half w3-margin-bottom">
+  <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d" style="width:100%">
+  <button class="boton w3-margin-top" onclick="mostrar('proyecto2')">Ver más</button>
+</div>
+
+<!-- PROYECTO 3 -->
+<div class="w3-half w3-margin-bottom">
+  <img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa" style="width:100%">
+  <button class="boton w3-margin-top" onclick="mostrar('proyecto3')">Ver más</button>
+</div>
+
+<!-- PROYECTO 4 -->
+<div class="w3-half w3-margin-bottom">
+  <img src="https://images.unsplash.com/photo-1559027615-9e429e0755f7" style="width:100%">
+  <button class="boton w3-margin-top" onclick="mostrar('proyecto4')">Ver más</button>
+</div>
+
+  </div>
+</section><!-- CONTACTO --><section id="contact" class="w3-padding-64 w3-content w3-text-grey">
+  <h2 class="w3-text-light-grey">Contacto</h2>
+  <hr style="width:200px" class="w3-opacity">  <form class="w3-container" action="mailto:pablogarciage.car@maristasnediterranea.com" method="POST" enctype="text/plain">
+    <input class="w3-input w3-margin-bottom" placeholder="Nombre" name="nombre">
+    <input class="w3-input w3-margin-bottom" placeholder="Email" name="email">
+    <textarea class="w3-input w3-margin-bottom" placeholder="Mensaje" name="mensaje"></textarea>
+    <button class="w3-button w3-light-grey">Enviar</button>
+  </form>
+</section><!-- PROYECTOS DETALLADOS --><section id="proyecto1" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 1</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+  <p>Mi primera página web usando HTML. Aprendí las bases de la estructura de una web.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section><section id="proyecto2" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 2</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
+  <p>Juego baloncesto en el equipo Estudiantes y uso el número 47.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section><section id="proyecto3" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 3</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa">
+  <p>Un mini portafolio donde experimenté con estilos personalizados.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section><section id="proyecto4" class="w3-padding-64 w3-content w3-center">
+  <h1>Proyecto 4</h1>
+  <img class="proyecto-img" src="https://images.unsplash.com/photo-1559027615-9e429e0755f7">
+  <p>Proyecto con tarjetas y efectos hover usando CSS.</p>
+  <button class="boton" onclick="mostrar('photos')">Volver</button>
+</section></div><script>
+function mostrar(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+</script></body>
+</html>
